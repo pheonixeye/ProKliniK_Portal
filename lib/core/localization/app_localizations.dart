@@ -236,6 +236,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It Goes Beyond Any Other Medical Software.'**
   String get beyond;
+
+  /// No description provided for @contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contact;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

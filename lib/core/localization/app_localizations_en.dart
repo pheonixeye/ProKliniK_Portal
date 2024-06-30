@@ -75,4 +75,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get beyond => 'It Goes Beyond Any Other Medical Software.';
+
+  @override
+  String get contact => 'Contact Us';
 }

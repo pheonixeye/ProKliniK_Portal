@@ -75,4 +75,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get beyond => 'مميزات و تجربة لا مثيل لها في اي نظام طبي ';
+
+  @override
+  String get contact => 'تواصل معنا';
 }
