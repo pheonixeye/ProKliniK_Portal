@@ -76,6 +76,7 @@ final List<Subscription> SUBSCRIPTIONS = [
 List<Feature> get allFeatures => _subscriptionFeatures;
 
 final List<Feature> _subscriptionFeatures = [
+  //TODO: modulate features
   Feature.access(),
   Feature.prescription(),
   Feature.notifications(),

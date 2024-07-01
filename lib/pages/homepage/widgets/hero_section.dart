@@ -16,9 +16,10 @@ class HeroSection extends StatelessWidget {
           scaleX: -1,
           child: Image.asset(
             Assets.hero,
-            fit: context.isMobile ? BoxFit.cover : BoxFit.contain,
+            fit: BoxFit.cover,
             matchTextDirection: true,
-            height: context.isMobile ? MediaQuery.sizeOf(context).height : null,
+            height: MediaQuery.sizeOf(context).height,
+            width: MediaQuery.sizeOf(context).width,
           ),
         ),
         Positioned(

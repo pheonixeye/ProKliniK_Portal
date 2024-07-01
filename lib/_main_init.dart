@@ -3,6 +3,7 @@ import 'dart:html';
 import 'dart:ui_web' as ui;
 
 void initWebView() {
+  //TODO: change location
   ui.platformViewRegistry.registerViewFactory(
       'map-view',
       (int viewId) => IFrameElement()

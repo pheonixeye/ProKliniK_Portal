@@ -89,7 +89,7 @@ class InfoContact extends StatelessWidget {
                     ),
                     onPressed: () {
                       //todo: implement send email
-                      //TODO: test
+                      //todo: test
                       html.window.open(
                         "mailto:info@ProKliniK.app",
                         "Send Email",

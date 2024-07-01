@@ -91,7 +91,7 @@ class _FormContactState extends State<FormContact> {
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
-                            : null,
+                            : const EdgeInsets.symmetric(horizontal: 8),
                         title: Text(context.loc.yes),
                         value: "yes",
                         groupValue: _state,
@@ -107,7 +107,7 @@ class _FormContactState extends State<FormContact> {
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
-                            : null,
+                            : const EdgeInsets.symmetric(horizontal: 8),
                         title: Text(context.loc.no),
                         value: "no",
                         groupValue: _state,
@@ -123,7 +123,7 @@ class _FormContactState extends State<FormContact> {
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
-                            : null,
+                            : const EdgeInsets.symmetric(horizontal: 8),
                         title: Text(context.loc.onTrial),
                         value: "ontrial",
                         groupValue: _state,
@@ -182,7 +182,7 @@ class _FormContactState extends State<FormContact> {
                     if (value == null || value.isEmpty) {
                       return context.loc.enterPhone;
                     }
-                    if (value.length < 11) {
+                    if (value.length != 11) {
                       return context.loc.validatePhone;
                     }
                     return null;
