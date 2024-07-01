@@ -156,4 +156,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get enterMessage => 'برجاء كتابة رسالتك';
+
+  @override
+  String get success => 'تم وصول رسالتك لنا بنجاح';
+
+  @override
+  String get failed => 'حدث خطأ في الاتصال. برجاء المحاولة في وقت لاحق.';
 }

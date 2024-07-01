@@ -156,4 +156,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enterMessage => 'Kindly Enter Your Message.';
+
+  @override
+  String get success => 'Your Message Got To Us Successfully.';
+
+  @override
+  String get failed => 'Something Went Wrong. Please Try Again Later.';
 }

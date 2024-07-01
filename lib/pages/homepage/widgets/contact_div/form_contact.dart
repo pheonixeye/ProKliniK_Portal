@@ -235,27 +235,36 @@ class _FormContactState extends State<FormContact> {
                               status: _state,
                             );
                             final helper = AppWriteHelper();
-                            await showDialog(
+                            showDialog(
                               context: context,
-                              builder: (context) =>
-                                  const CircularProgressIndicator.adaptive(),
+                              builder: (context) => const Center(
+                                  child: CircularProgressIndicator.adaptive()),
                             );
-                            final result =
-                                await helper.sendFormSubmission(sub).then((_) {
-                              //todo: show indicator form submitted
-                              GoRouter.of(context).pop();
-                            });
 
-                            if (result) {
-                              scaffoldMessengerKey.currentState?.showSnackBar(
-                                  snackBar("Success", Colors.green));
-                            } else {
-                              scaffoldMessengerKey.currentState?.showSnackBar(
-                                  snackBar("Failed", Colors.red));
+                            try {
+                              await helper.sendFormSubmission(sub).then((_) {
+                                //todo: show indicator form submitted
+                                GoRouter.of(context).pop();
+                              });
+                              if (context.mounted) {
+                                scaffoldMessengerKey.currentState
+                                    ?.showSnackBar(snackBar(
+                                  context.loc.success,
+                                  Colors.green,
+                                ));
+                              }
+                              _resetState();
+                            } catch (e) {
+                              if (context.mounted) {
+                                scaffoldMessengerKey.currentState
+                                    ?.showSnackBar(snackBar(
+                                  context.loc.failed,
+                                  Colors.red,
+                                ));
+                              }
                             }
 
                             //todo: clear controllers && reset state
-                            _resetState();
                           }
                         },
                         child: Padding(

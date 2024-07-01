@@ -398,6 +398,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Kindly Enter Your Message.'**
   String get enterMessage;
+
+  /// No description provided for @success.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Message Got To Us Successfully.'**
+  String get success;
+
+  /// No description provided for @failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Something Went Wrong. Please Try Again Later.'**
+  String get failed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
