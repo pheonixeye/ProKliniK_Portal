@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 import 'package:portal/providers/pricing_px.dart';
 import 'package:provider/provider.dart';
@@ -14,11 +15,12 @@ class _SubscriptionTypeState extends State<SubscriptionType> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: EdgeInsets.symmetric(horizontal: context.isMobile ? 10 : 50),
       child: Consumer<PxPricing>(
         builder: (context, p, _) {
           return SwitchListTile(
             title: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(context.loc.choosePlan),
                 const SizedBox(width: 10),

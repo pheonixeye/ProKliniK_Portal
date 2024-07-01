@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal/assets/assets.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 
 class HeroSection extends StatelessWidget {
@@ -7,21 +8,23 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: RESPONSIVE
-
+    //todo: RESPONSIVE
     return Stack(
       children: [
         Transform.scale(
           scaleX: -1,
           child: Image.asset(
             Assets.hero,
-            fit: BoxFit.contain,
+            fit: context.isMobile ? BoxFit.cover : BoxFit.contain,
             matchTextDirection: true,
+            height: context.isMobile ? MediaQuery.sizeOf(context).height : null,
           ),
         ),
         Positioned(
           height: MediaQuery.sizeOf(context).height,
-          width: MediaQuery.sizeOf(context).width / 3,
+          width: context.isMobile
+              ? MediaQuery.sizeOf(context).width
+              : MediaQuery.sizeOf(context).width / 3,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(

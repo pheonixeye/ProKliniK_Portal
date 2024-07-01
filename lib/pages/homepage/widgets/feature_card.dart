@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portal/assets/assets.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/models/feature_model.dart';
 import 'package:portal/providers/locale_px.dart';
+import 'package:portal/widgets/selective_intrinsic.dart';
 import 'package:provider/provider.dart';
 
 class FeatureCard extends StatelessWidget {
@@ -17,8 +19,8 @@ class FeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 50,
+      padding: EdgeInsets.symmetric(
+        horizontal: context.isMobile ? 10 : 50,
         vertical: 10,
       ),
       child: Card(
@@ -26,48 +28,51 @@ class FeatureCard extends StatelessWidget {
         elevation: 6,
         child: Consumer<PxLocale>(
           builder: (context, l, _) {
-            return Flex(
-              direction: Axis.horizontal,
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l.isEnglish ? feature.titleEn : feature.titleAr,
-                          style: TextStyle(
-                            color: isDark ? Colors.black : Colors.white,
-                            fontSize: 58,
-                            fontWeight: FontWeight.bold,
+            return SelectiveIntrinsic(
+              child: Flex(
+                direction: context.isMobile ? Axis.vertical : Axis.horizontal,
+                children: [
+                  if (context.isMobile) const SizedBox(height: 10),
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l.isEnglish ? feature.titleEn : feature.titleAr,
+                            style: TextStyle(
+                              color: isDark ? Colors.black : Colors.white,
+                              fontSize: context.isMobile ? 32 : 58,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          l.isEnglish
-                              ? feature.descriptionEn
-                              : feature.descriptionAr,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            color: isDark ? Colors.black : Colors.white,
+                          const SizedBox(height: 10),
+                          Text(
+                            l.isEnglish
+                                ? feature.descriptionEn
+                                : feature.descriptionAr,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                              color: isDark ? Colors.black : Colors.white,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Image.asset(
-                    Assets.featureImage(index),
-                    fit: BoxFit.contain,
-                    height: 400,
-                  ),
-                )
-              ],
+                  Expanded(
+                    flex: 2,
+                    child: Image.asset(
+                      Assets.featureImage(index),
+                      fit: BoxFit.contain,
+                      height: context.isMobile ? 150 : 400,
+                    ),
+                  )
+                ],
+              ),
             );
           },
         ),

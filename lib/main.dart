@@ -9,6 +9,7 @@ import 'package:flutter_web_plugins/url_strategy.dart' show usePathUrlStrategy;
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
   initWebView();
   runApp(const AppProvider());

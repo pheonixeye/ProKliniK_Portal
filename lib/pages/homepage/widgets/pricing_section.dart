@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 import 'package:portal/models/subscription_model.dart';
 import 'package:portal/pages/homepage/widgets/pricing_card.dart';
@@ -17,7 +18,9 @@ class PricingSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: MediaQuery.sizeOf(context).width * 0.2,
+            width: context.isMobile
+                ? MediaQuery.sizeOf(context).width * 0.5
+                : MediaQuery.sizeOf(context).width * 0.2,
             child: Card.outlined(
               elevation: 6,
               child: Consumer<PxLocale>(
@@ -55,7 +58,7 @@ class PricingSection extends StatelessWidget {
                             const Divider(),
                           ],
                         );
-                      })
+                      }),
                     ],
                   );
                 },

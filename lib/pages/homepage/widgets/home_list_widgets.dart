@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 import 'package:portal/models/faq_model.dart';
 import 'package:portal/models/feature_model.dart';
@@ -11,6 +12,7 @@ import 'package:portal/pages/homepage/widgets/footer_div.dart';
 import 'package:portal/pages/homepage/widgets/hero_section.dart';
 import 'package:portal/pages/homepage/widgets/pricing_section.dart';
 import 'package:portal/pages/homepage/widgets/subscription_type.dart';
+import 'package:portal/widgets/selective_intrinsic.dart';
 
 class HomeWidgetsList {
   const HomeWidgetsList();
@@ -61,18 +63,21 @@ class HomeWidgetsList {
           title: context.loc.contact,
         ),
 
-        const Row(
-          children: [
-            Spacer(flex: 1),
+        SelectiveIntrinsic(
+          child: Flex(
+            direction: context.isMobile ? Axis.vertical : Axis.horizontal,
+            children: const [
+              Spacer(flex: 1),
 
-            ///contact info div
-            InfoContact(),
-            Spacer(flex: 1),
+              ///contact info div
+              InfoContact(),
+              Spacer(flex: 1),
 
-            ///contact form div
-            FormContact(),
-            Spacer(flex: 1),
-          ],
+              ///contact form div
+              FormContact(),
+              Spacer(flex: 1),
+            ],
+          ),
         ),
 
         ///footer

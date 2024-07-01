@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 
 class DividerTitle extends StatelessWidget {
   const DividerTitle({
@@ -18,8 +19,8 @@ class DividerTitle extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 48,
+          style: TextStyle(
+            fontSize: context.isMobile ? 32 : 48,
             fontWeight: FontWeight.bold,
           ),
         ),

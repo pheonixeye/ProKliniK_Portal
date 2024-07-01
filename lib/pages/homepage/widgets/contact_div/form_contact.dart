@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 
 class FormContact extends StatefulWidget {
@@ -74,6 +75,9 @@ class _FormContactState extends State<FormContact> {
                   children: [
                     Expanded(
                       child: RadioListTile(
+                        contentPadding: context.isMobile
+                            ? const EdgeInsets.symmetric(horizontal: 4)
+                            : null,
                         title: Text(context.loc.yes),
                         value: "yes",
                         groupValue: _state,
@@ -86,6 +90,9 @@ class _FormContactState extends State<FormContact> {
                     ),
                     Expanded(
                       child: RadioListTile(
+                        contentPadding: context.isMobile
+                            ? const EdgeInsets.symmetric(horizontal: 4)
+                            : null,
                         title: Text(context.loc.no),
                         value: "no",
                         groupValue: _state,
@@ -97,7 +104,11 @@ class _FormContactState extends State<FormContact> {
                       ),
                     ),
                     Expanded(
+                      flex: context.isMobile ? 2 : 1,
                       child: RadioListTile(
+                        contentPadding: context.isMobile
+                            ? const EdgeInsets.symmetric(horizontal: 4)
+                            : null,
                         title: Text(context.loc.onTrial),
                         value: "ontrial",
                         groupValue: _state,
@@ -167,7 +178,7 @@ class _FormContactState extends State<FormContact> {
               ListTile(
                 title: Text("${context.loc.helpYouWith} *"),
                 subtitle: SizedBox(
-                  height: 200,
+                  height: context.isMobile ? 100 : 200,
                   child: TextFormField(
                     controller: _messageController,
                     expands: true,
@@ -187,7 +198,7 @@ class _FormContactState extends State<FormContact> {
               ),
               const SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(context.isMobile ? 8 : 16.0),
                 child: Row(
                   children: [
                     Expanded(
@@ -206,7 +217,7 @@ class _FormContactState extends State<FormContact> {
                           }
                         },
                         child: Padding(
-                          padding: const EdgeInsets.all(24.0),
+                          padding: EdgeInsets.all(context.isMobile ? 16 : 24.0),
                           child: Text(context.loc.contact),
                         ),
                       ),

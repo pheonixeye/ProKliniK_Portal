@@ -1,9 +1,8 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
-import 'dart:ui' as ui;
+import 'dart:ui_web' as ui;
 
 void initWebView() {
-  // ignore: undefined_prefixed_name
   ui.platformViewRegistry.registerViewFactory(
       'map-view',
       (int viewId) => IFrameElement()

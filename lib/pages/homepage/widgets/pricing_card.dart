@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
 import 'package:portal/models/subscription_model.dart';
 import 'package:portal/providers/locale_px.dart';
@@ -21,7 +22,9 @@ class PricingCard extends StatelessWidget {
           ? const EdgeInsets.only(bottom: 16, left: 8, right: 8)
           : const EdgeInsets.symmetric(horizontal: 8),
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width * 0.35,
+        width: context.isMobile
+            ? MediaQuery.sizeOf(context).width * 0.65
+            : MediaQuery.sizeOf(context).width * 0.35,
         child: Card(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
           elevation: index == 1 ? 12 : 6,
