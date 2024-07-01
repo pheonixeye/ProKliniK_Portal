@@ -27,6 +27,8 @@ class AppProvider extends StatelessWidget {
   }
 }
 
+final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
     return Consumer<PxLocale>(
       builder: (context, l, _) {
         return MaterialApp.router(
+          scaffoldMessengerKey: scaffoldMessengerKey,
           title: "ProKliniK Portal",
           routerConfig: router,
           debugShowCheckedModeBanner: false,

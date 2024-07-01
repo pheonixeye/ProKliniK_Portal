@@ -19,15 +19,9 @@ class _SubscriptionTypeState extends State<SubscriptionType> {
       child: Consumer<PxPricing>(
         builder: (context, p, _) {
           return SwitchListTile(
-            title: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(context.loc.choosePlan),
-                const SizedBox(width: 10),
-                Text(
-                    "( ${p.isMonthly ? context.loc.monthly : context.loc.yearly} )"),
-              ],
-            ),
+            title: Text(context.loc.choosePlan),
+            subtitle: Text(
+                "( ${p.isMonthly ? context.loc.monthly : context.loc.yearly} )"),
             value: p.isMonthly,
             onChanged: (value) {
               p.swap();

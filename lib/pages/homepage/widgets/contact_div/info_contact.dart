@@ -1,3 +1,6 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
 import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
@@ -8,7 +11,7 @@ class InfoContact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: RESPONSIVE
+    //todo: RESPONSIVE
 
     return Expanded(
       flex: 10,
@@ -49,7 +52,12 @@ class InfoContact extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      //TODO:
+                      //todo: implement call
+                      html.window.open(
+                        "tel:+201555905768",
+                        "Call Mobile",
+                        "_blank",
+                      );
                     },
                     child: ListTile(
                       contentPadding: EdgeInsets.symmetric(
@@ -75,11 +83,18 @@ class InfoContact extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          side: const BorderSide()),
+                        borderRadius: BorderRadius.circular(4),
+                        side: const BorderSide(),
+                      ),
                     ),
                     onPressed: () {
-                      //TODO:
+                      //todo: implement send email
+                      //TODO: test
+                      html.window.open(
+                        "mailto:info@ProKliniK.app",
+                        "Send Email",
+                        "_blank",
+                      );
                     },
                     child: ListTile(
                       contentPadding: EdgeInsets.symmetric(

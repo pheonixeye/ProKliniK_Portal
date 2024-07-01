@@ -16,7 +16,7 @@ class PricingCard extends StatelessWidget {
   final int index;
   @override
   Widget build(BuildContext context) {
-    //TODO: RESPONSIVE
+    //todo: RESPONSIVE
     return Padding(
       padding: index == 1
           ? const EdgeInsets.only(bottom: 16, left: 8, right: 8)

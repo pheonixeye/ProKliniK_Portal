@@ -1,7 +1,12 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:portal/core/appwrite/appwrite_helper.dart';
 import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
+import 'package:portal/main.dart';
+import 'package:portal/models/form_submission_model.dart';
+import 'package:portal/widgets/snakbars.dart';
 
 class FormContact extends StatefulWidget {
   const FormContact({super.key});
@@ -11,7 +16,7 @@ class FormContact extends StatefulWidget {
 }
 
 class _FormContactState extends State<FormContact> {
-  //TODO: RESPONSIVE
+  //todo: RESPONSIVE
 
   final formKey = GlobalKey<FormState>();
   String? _state;
@@ -37,6 +42,14 @@ class _FormContactState extends State<FormContact> {
     _phoneController.dispose();
     _messageController.dispose();
     super.dispose();
+  }
+
+  void _resetState() {
+    _nameController.clear();
+    _emailController.clear();
+    _phoneController.clear();
+    _messageController.clear();
+    _state = null;
   }
 
   @override
@@ -74,6 +87,7 @@ class _FormContactState extends State<FormContact> {
                 subtitle: Row(
                   children: [
                     Expanded(
+                      flex: 2,
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
@@ -89,6 +103,7 @@ class _FormContactState extends State<FormContact> {
                       ),
                     ),
                     Expanded(
+                      flex: 1,
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
@@ -104,7 +119,7 @@ class _FormContactState extends State<FormContact> {
                       ),
                     ),
                     Expanded(
-                      flex: context.isMobile ? 2 : 1,
+                      flex: 3,
                       child: RadioListTile(
                         contentPadding: context.isMobile
                             ? const EdgeInsets.symmetric(horizontal: 4)
@@ -209,11 +224,38 @@ class _FormContactState extends State<FormContact> {
                               borderRadius: BorderRadius.circular(4),
                               side: const BorderSide()),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           if (formKey.currentState!.validate()) {
-                            //TODO: submit form
-                            //TODO: show indicator form submitted
-                            //TODO: clear controllers && reset state
+                            //todo: submit form
+                            final sub = FormSubmission(
+                              username: _nameController.text,
+                              email: _emailController.text,
+                              phone: _phoneController.text,
+                              message: _messageController.text,
+                              status: _state,
+                            );
+                            final helper = AppWriteHelper();
+                            await showDialog(
+                              context: context,
+                              builder: (context) =>
+                                  const CircularProgressIndicator.adaptive(),
+                            );
+                            final result =
+                                await helper.sendFormSubmission(sub).then((_) {
+                              //todo: show indicator form submitted
+                              GoRouter.of(context).pop();
+                            });
+
+                            if (result) {
+                              scaffoldMessengerKey.currentState?.showSnackBar(
+                                  snackBar("Success", Colors.green));
+                            } else {
+                              scaffoldMessengerKey.currentState?.showSnackBar(
+                                  snackBar("Failed", Colors.red));
+                            }
+
+                            //todo: clear controllers && reset state
+                            _resetState();
                           }
                         },
                         child: Padding(

@@ -12,58 +12,65 @@ class NavListBtns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final padding = context.isMobile ? _mobilePadding : _regularPadding;
+    List<Widget> buildChildren(PxScroll s) => [
+          if (!inFooter) const Spacer(),
+          Padding(
+            padding: padding,
+            child: TextButton(
+              onPressed: () {
+                s.scrollToIndex(0);
+              },
+              child: Text(context.loc.home),
+            ),
+          ),
+          Padding(
+            padding: padding,
+            child: TextButton(
+              onPressed: () {
+                s.scrollToIndex(1);
+              },
+              child: Text(context.loc.features),
+            ),
+          ),
+          Padding(
+            padding: padding,
+            child: TextButton(
+              onPressed: () {
+                s.scrollToIndex(7);
+              },
+              child: Text(context.loc.pricing),
+            ),
+          ),
+          Padding(
+            padding: padding,
+            child: TextButton(
+              onPressed: () {
+                s.scrollToIndex(11);
+              },
+              child: Text(context.loc.faq),
+            ),
+          ),
+          Padding(
+            padding: padding,
+            child: TextButton(
+              onPressed: () {
+                s.scrollToIndex(18);
+              },
+              child: Text(context.loc.contact),
+            ),
+          ),
+          if (!inFooter) const Spacer(),
+        ];
     return Consumer<PxScroll>(
       builder: (context, s, _) {
-        return Wrap(
-          children: [
-            if (inFooter && !context.isMobile) const Spacer(),
-            Padding(
-              padding: padding,
-              child: TextButton(
-                onPressed: () {
-                  s.scrollToIndex(0);
-                },
-                child: Text(context.loc.home),
-              ),
-            ),
-            Padding(
-              padding: padding,
-              child: TextButton(
-                onPressed: () {
-                  s.scrollToIndex(1);
-                },
-                child: Text(context.loc.features),
-              ),
-            ),
-            Padding(
-              padding: padding,
-              child: TextButton(
-                onPressed: () {
-                  s.scrollToIndex(7);
-                },
-                child: Text(context.loc.pricing),
-              ),
-            ),
-            Padding(
-              padding: padding,
-              child: TextButton(
-                onPressed: () {
-                  s.scrollToIndex(11);
-                },
-                child: Text(context.loc.faq),
-              ),
-            ),
-            Padding(
-              padding: padding,
-              child: TextButton(
-                onPressed: () {
-                  s.scrollToIndex(18);
-                },
-                child: Text(context.loc.contact),
-              ),
-            ),
-            if (inFooter && !context.isMobile) const Spacer(),
-          ],
+        if (context.isMobile) {
+          return Wrap(
+            children: buildChildren(s),
+          );
+        }
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: buildChildren(s),
         );
       },
     );

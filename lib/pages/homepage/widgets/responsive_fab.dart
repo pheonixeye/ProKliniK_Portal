@@ -50,7 +50,7 @@ class ResponsiveFab extends StatelessWidget {
                 child: const FloatingActionButton(
                   heroTag: "navigation-btn",
                   onPressed: null,
-                  child: const Icon(Icons.menu),
+                  child: Icon(Icons.menu),
                 ),
               );
             },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/models/faq_model.dart';
 import 'package:portal/providers/locale_px.dart';
 import 'package:provider/provider.dart';
@@ -10,8 +11,8 @@ class FaqCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 50,
+      padding: EdgeInsets.symmetric(
+        horizontal: context.isMobile ? 10 : 50,
         vertical: 10,
       ),
       child: Consumer<PxLocale>(

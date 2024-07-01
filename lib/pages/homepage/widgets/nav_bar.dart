@@ -96,7 +96,7 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: RESPONSIVE
+    //todo: RESPONSIVE
     return AppBar(
       leading: Padding(
         padding: const EdgeInsets.all(8.0),

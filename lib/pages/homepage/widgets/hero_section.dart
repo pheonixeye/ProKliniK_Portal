@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portal/assets/assets.dart';
 import 'package:portal/extensions/is_mobile_context.dart';
 import 'package:portal/extensions/loc_ext.dart';
+import 'package:portal/widgets/how_it_works_dialog.dart';
 
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key});
@@ -77,8 +78,12 @@ class HeroSection extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        onPressed: () {
+                        onPressed: () async {
                           //TODO: link
+                          await showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (context) => const HowItWorksDialog());
                         },
                         child: Text(context.loc.howItWorks),
                       ),

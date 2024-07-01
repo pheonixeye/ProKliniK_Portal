@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portal/assets/assets.dart';
 import 'package:portal/extensions/loc_ext.dart';
 import 'package:portal/pages/homepage/widgets/nav_list_btns.dart';
+import 'package:portal/widgets/how_it_works_dialog.dart';
 
 class FooterDiv extends StatelessWidget {
   const FooterDiv({super.key});
@@ -61,7 +62,13 @@ class FooterDiv extends StatelessWidget {
               Text.rich(
                 TextSpan(
                   text: context.loc.legal,
-                  recognizer: TapGestureRecognizer()..onTap = () {},
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) => const HowItWorksDialog());
+                    },
                   children: [
                     const TextSpan(text: ' '),
                     const TextSpan(text: '@ProKliniK.app'),
