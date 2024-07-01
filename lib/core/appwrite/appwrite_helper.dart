@@ -1,23 +1,21 @@
-import 'dart:io';
-
 import 'package:appwrite/appwrite.dart';
 import 'package:portal/models/form_submission_model.dart';
 
 class AppWriteHelper {
   AppWriteHelper() {
-    client
-        .setEndpoint('https://cloud.appwrite.io/v1')
-        .setProject(Platform.environment["project_id"]);
+    db = Databases(_client);
   }
 
-  static final Client client = Client();
-  final Databases db = Databases(client);
+  static final Client _client = Client()
+      .setEndpoint('https://cloud.appwrite.io/v1')
+      .setProject(const String.fromEnvironment("project_id"));
+  late final Databases db;
 
   Future<bool> sendFormSubmission(FormSubmission submission) async {
     try {
       await db.createDocument(
-        databaseId: Platform.environment["database_id"]!,
-        collectionId: Platform.environment["collection_id"]!,
+        databaseId: const String.fromEnvironment("database_id"),
+        collectionId: const String.fromEnvironment("collection_id"),
         documentId: ID.unique(),
         data: submission.toJson(),
       );
