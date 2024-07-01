@@ -7,6 +7,8 @@ class HeroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO: RESPONSIVE
+
     return Stack(
       children: [
         Transform.scale(
@@ -46,7 +48,9 @@ class HeroSection extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          //TODO: reg account
+                        },
                         label: Text(
                           context.loc.getStarted,
                           style: const TextStyle(
@@ -70,7 +74,9 @@ class HeroSection extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          //TODO: link
+                        },
                         child: Text(context.loc.howItWorks),
                       ),
                     ),

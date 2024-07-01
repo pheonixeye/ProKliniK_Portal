@@ -41,6 +41,15 @@
     "fullName" : "Full Name",
     "email" : "Email Address",
     "phone" : "Phone Number",
-    "helpYouWith" : "What Can We Help You With ?"
+    "helpYouWith" : "What Can We Help You With ?",
+    "pricing" : "Pricing",
+    "learnMore" : "Learn More About Our Services.",
+    "legal" : "Terms & Legal",
+    "enterName" : "Kindly Enter Your Name.",
+    "enterEmail" : "Kindly Enter Your Valid Email Address.",
+    "enterPhone" : "Kindly Enter Your Mobile Phone Number.",
+    "validatePhone" : "Kindly Enter a Valid Mobile Number With 11 Digits.",
+    "enterMessage" : "Kindly Enter Your Message."
+
 
   }

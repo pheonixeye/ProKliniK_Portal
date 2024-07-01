@@ -132,4 +132,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helpYouWith => 'What Can We Help You With ?';
+
+  @override
+  String get pricing => 'Pricing';
+
+  @override
+  String get learnMore => 'Learn More About Our Services.';
+
+  @override
+  String get legal => 'Terms & Legal';
+
+  @override
+  String get enterName => 'Kindly Enter Your Name.';
+
+  @override
+  String get enterEmail => 'Kindly Enter Your Valid Email Address.';
+
+  @override
+  String get enterPhone => 'Kindly Enter Your Mobile Phone Number.';
+
+  @override
+  String get validatePhone => 'Kindly Enter a Valid Mobile Number With 11 Digits.';
+
+  @override
+  String get enterMessage => 'Kindly Enter Your Message.';
 }

@@ -132,4 +132,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get helpYouWith => 'كيف نستطيع ان نساعدك ؟';
+
+  @override
+  String get pricing => 'الاسعار';
+
+  @override
+  String get learnMore => 'اعرف المزيد عن خدماتنا';
+
+  @override
+  String get legal => 'الشروط و الاحكام';
+
+  @override
+  String get enterName => 'برجاء كتابة الاسم كاملا';
+
+  @override
+  String get enterEmail => 'برجاء ادخال بريد الكتروني صحيح';
+
+  @override
+  String get enterPhone => 'برجاء ادخال رقم الموبايل';
+
+  @override
+  String get validatePhone => 'برجاء ادخال رقم موبايل صحيح مكون من احد عشر رقم';
+
+  @override
+  String get enterMessage => 'برجاء كتابة رسالتك';
 }

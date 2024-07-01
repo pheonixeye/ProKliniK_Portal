@@ -350,6 +350,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What Can We Help You With ?'**
   String get helpYouWith;
+
+  /// No description provided for @pricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing'**
+  String get pricing;
+
+  /// No description provided for @learnMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn More About Our Services.'**
+  String get learnMore;
+
+  /// No description provided for @legal.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms & Legal'**
+  String get legal;
+
+  /// No description provided for @enterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindly Enter Your Name.'**
+  String get enterName;
+
+  /// No description provided for @enterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindly Enter Your Valid Email Address.'**
+  String get enterEmail;
+
+  /// No description provided for @enterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindly Enter Your Mobile Phone Number.'**
+  String get enterPhone;
+
+  /// No description provided for @validatePhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindly Enter a Valid Mobile Number With 11 Digits.'**
+  String get validatePhone;
+
+  /// No description provided for @enterMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindly Enter Your Message.'**
+  String get enterMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
