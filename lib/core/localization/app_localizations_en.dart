@@ -78,4 +78,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contact => 'Contact Us';
+
+  @override
+  String get letsTalk => 'Let\'s Talk.';
+
+  @override
+  String get haveQuestions => 'If You Have Any Questions About The Subscription Or Are Not Sure Which Plan is Right For You, Contact Our Team And Let\'s Schedule A Call.';
+
+  @override
+  String get callUs => 'Call Us';
+
+  @override
+  String get emailUs => 'Email Us';
+
+  @override
+  String get visitHelpCenter => 'Visit Help Center';
+
+  @override
+  String get visitUsPersonally => 'Visit Us Personally';
+
+  @override
+  String get addressOne => 'Zahraa El Maadi';
+
+  @override
+  String get addressTwo => 'El Nada Tower';
+
+  @override
+  String get addressThree => 'First Floor';
+
+  @override
+  String get plansToPowerBus => 'We Have Plans To Power Your Clinic Business. Tell Us Your Needs And We Will Contact You Shortly.';
+
+  @override
+  String get existingCustomer => 'Are You An Existing Customer ?';
+
+  @override
+  String get yes => 'Yes';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get onTrial => 'On Trial';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get email => 'Email Address';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get helpYouWith => 'What Can We Help You With ?';
 }

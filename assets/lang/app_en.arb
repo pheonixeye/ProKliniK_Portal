@@ -23,5 +23,24 @@
     "faq" : "Frequently Asked Questions ?",
     "better" : "It's Better Than You Think.",
     "beyond" : "It Goes Beyond Any Other Medical Software.",
-    "contact" : "Contact Us"
+    "contact" : "Contact Us",
+    "letsTalk" : "Let's Talk.",
+    "haveQuestions" : "If You Have Any Questions About The Subscription Or Are Not Sure Which Plan is Right For You, Contact Our Team And Let's Schedule A Call.",
+    "callUs" : "Call Us",
+    "emailUs" : "Email Us",
+    "visitHelpCenter" : "Visit Help Center",
+    "visitUsPersonally" : "Visit Us Personally",
+    "addressOne" : "Zahraa El Maadi",
+    "addressTwo" : "El Nada Tower" ,
+    "addressThree" : "First Floor",
+    "plansToPowerBus" : "We Have Plans To Power Your Clinic Business. Tell Us Your Needs And We Will Contact You Shortly.",
+    "existingCustomer" : "Are You An Existing Customer ?",
+    "yes" : "Yes",
+    "no" : "No",
+    "onTrial" : "On Trial",
+    "fullName" : "Full Name",
+    "email" : "Email Address",
+    "phone" : "Phone Number",
+    "helpYouWith" : "What Can We Help You With ?"
+
   }

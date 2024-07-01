@@ -78,4 +78,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get contact => 'تواصل معنا';
+
+  @override
+  String get letsTalk => 'اسئالنا نجيب';
+
+  @override
+  String get haveQuestions => 'إذا كانت لديك أي أسئلة حول الاشتراك أو لم تكن متأكدًا من الخطة المناسبة لك، فاتصل بفريقنا ودعنا نحدد موعدًا للمكالمة.';
+
+  @override
+  String get callUs => 'تواصل هاتفيا';
+
+  @override
+  String get emailUs => 'البريد الالكتروني';
+
+  @override
+  String get visitHelpCenter => 'زيارة مركز المساعدة';
+
+  @override
+  String get visitUsPersonally => 'زورونا في الشركة';
+
+  @override
+  String get addressOne => 'زهراء المعادي';
+
+  @override
+  String get addressTwo => 'برج الندي';
+
+  @override
+  String get addressThree => 'الدور الاول';
+
+  @override
+  String get plansToPowerBus => 'لدينا خطط لتعزيز أعمال عيادتك. أخبرنا باحتياجاتك وسنتصل بك قريبًا.';
+
+  @override
+  String get existingCustomer => 'هل انت عميل حالي ؟';
+
+  @override
+  String get yes => 'نعم';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get onTrial => 'في الفترة التجريبية';
+
+  @override
+  String get fullName => 'الاسم الكامل';
+
+  @override
+  String get email => 'البريد الالكتروني';
+
+  @override
+  String get phone => 'رقم الموبايل';
+
+  @override
+  String get helpYouWith => 'كيف نستطيع ان نساعدك ؟';
 }

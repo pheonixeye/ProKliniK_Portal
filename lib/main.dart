@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal/_main_init.dart';
 import 'package:portal/core/localization/app_localizations.dart';
 import 'package:portal/providers/_main.dart';
 import 'package:portal/providers/locale_px.dart';
@@ -9,6 +10,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   usePathUrlStrategy();
+  initWebView();
   runApp(const AppProvider());
 }
 

@@ -242,6 +242,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Contact Us'**
   String get contact;
+
+  /// No description provided for @letsTalk.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s Talk.'**
+  String get letsTalk;
+
+  /// No description provided for @haveQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'If You Have Any Questions About The Subscription Or Are Not Sure Which Plan is Right For You, Contact Our Team And Let\'s Schedule A Call.'**
+  String get haveQuestions;
+
+  /// No description provided for @callUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Call Us'**
+  String get callUs;
+
+  /// No description provided for @emailUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Us'**
+  String get emailUs;
+
+  /// No description provided for @visitHelpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit Help Center'**
+  String get visitHelpCenter;
+
+  /// No description provided for @visitUsPersonally.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit Us Personally'**
+  String get visitUsPersonally;
+
+  /// No description provided for @addressOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Zahraa El Maadi'**
+  String get addressOne;
+
+  /// No description provided for @addressTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'El Nada Tower'**
+  String get addressTwo;
+
+  /// No description provided for @addressThree.
+  ///
+  /// In en, this message translates to:
+  /// **'First Floor'**
+  String get addressThree;
+
+  /// No description provided for @plansToPowerBus.
+  ///
+  /// In en, this message translates to:
+  /// **'We Have Plans To Power Your Clinic Business. Tell Us Your Needs And We Will Contact You Shortly.'**
+  String get plansToPowerBus;
+
+  /// No description provided for @existingCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Are You An Existing Customer ?'**
+  String get existingCustomer;
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @onTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'On Trial'**
+  String get onTrial;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get email;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// No description provided for @helpYouWith.
+  ///
+  /// In en, this message translates to:
+  /// **'What Can We Help You With ?'**
+  String get helpYouWith;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
